@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Product Management</title>
+
+    <!-- Style sheets -->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/App.css" rel="stylesheet" />
+    
+    <!-- Library Scripts -->
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <script src="common/common.services.js"></script>
+    <script src="common/productResource.js"></script>
+    <script src="common/userAccount.js"></script>
+    <script src="common/currentUser.js"></script>
+
+    <!-- Product Controllers -->
+    <script src="app/products/productListCtrl.js"></script>
+    <script src="app/products/productDetailCtrl.js"></script>
+    <script src="app/products/productEditCtrl.js"></script>
+    <script src="app/mainCtrl.js"></script>
+</head>
+    <body ng-app="main">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <a class="navbar-brand"
+                   >Angule + WebApi = Amaze</a>
+                <div class="navbar-header">
+                    <button type="button"
+                            class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="productList">Product List</a></li>
+                        <li><a ui-sref="login">Login</a></li>
+                        <li>
+                            <a ui-sref="productEdit({id:0})">
+                                Add Product
+                            </a>
+                        </li>
+                        <li><a href="https://github.com/arthurlv6/MVC5/tree/master/SolutionDemo/ApiServer" target="_blank">WebApi Source download</a></li>
+                        <li><a href="https://github.com/arthurlv6/MVC5/tree/master/SolutionDemo/AngularClient" target="_blank">AngularJS Client Source download</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div ui-view></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+﻿initalize database
+
+enable-migrations -ContextTypeName ApiServer.DataContext.ApplicationDbContext -MigrationsDirectory DataContext\ApplicationMigrations
+add-migration -ConfigurationTypeName ApiServer.DataContext.ApplicationMigrations.Configuration "IntialCreate"
+update-database -ConfigurationTypeName ApiServer.DataContext.ApplicationMigrations.Configuration
