@@ -13,7 +13,9 @@ using ApiServer.Repositories;
 
 namespace ApiServer.Controllers
 {
-    [EnableCors("http://angular.arthurcv.com", "*", "*")]
+    //[EnableCors("http://angular.arthurcv.com", "*", "*")]
+    [EnableCors("http://localhost:12400", "*", "*")]
+    
     public class ProductsController : ApiController
     {
         // GET: api/Products

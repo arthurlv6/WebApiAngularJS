@@ -32,8 +32,11 @@ namespace ApiServer.Providers
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin",
+            //    new[] { "http://angular.arthurcv.com" });
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin",
-                new[] { "http://angular.arthurcv.com" });
+            new[] { "http://localhost:12400/" });
+        
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
