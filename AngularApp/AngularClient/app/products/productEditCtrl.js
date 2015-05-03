@@ -32,9 +32,15 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
-                vm.product.$save(function (data) {
-                    vm.message = "Save Successful";
-                });
+                if (vm.product && vm.product.id) {
+                    vm.product.$update({id:vm.product.id},function (data) {
+                        vm.message = "Update Successful";
+                    });
+                } else {
+                    vm.product.$save(function (data) {
+                        vm.message = "Save Successful";
+                    });
+                }
             } else {
                 alert("Please correct the validation errors first.");
             }
