@@ -3,10 +3,10 @@
     angular
         .module("common.services")
         .factory("productResource",
-                ["$resource",
-                 "appSettings",
-                 "currentUser",
-                    productResource])
+            ["$resource",
+                "appSettings",
+                "currentUser",
+                productResource]);
 
     function productResource($resource, appSettings, currentUser) {
         return $resource(appSettings.serverPath + "/api/products/:id", null,

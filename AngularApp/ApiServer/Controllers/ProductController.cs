@@ -82,7 +82,16 @@ namespace ApiServer.Controllers
                 }
 
                 var productRepository = new ProductRepository();
-                var newProduct = productRepository.Save(product);
+                Product newProduct;
+                if (product.Id == 0)
+                {
+                    newProduct = productRepository.Save(product);
+                }
+                else
+                {
+                    newProduct = productRepository.Save(product.Id, product);
+                }
+                
                 if (newProduct == null)
                 {
                     return Conflict();

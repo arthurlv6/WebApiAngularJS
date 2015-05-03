@@ -10,6 +10,7 @@ namespace ApiServer.DataContext.ApplicationMigrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             MigrationsDirectory = @"DataContext\ApplicationMigrations";
         }
 

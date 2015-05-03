@@ -14,6 +14,8 @@
     <script src="Scripts/angular-resource.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/ui-utils.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls-0.11.0.js"></script>
 
     <!-- Application Script -->
     <script src="app/app.js"></script>
@@ -51,7 +53,7 @@
                         <li><a ui-sref="productList">Product List</a></li>
                         <li><a ui-sref="login">Login</a></li>
                         <li>
-                            <a ui-sref="productEdit({id:0})">
+                            <a ui-sref="productEdit.info({id:0})">
                                 Add Product
                             </a>
                         </li>

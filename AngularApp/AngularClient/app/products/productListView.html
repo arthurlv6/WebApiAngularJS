@@ -23,21 +23,34 @@
             
             <div ng-show="vm.message">{{vm.message}}</div>
         </form>
-        <table class="table">
+        <table class="table table-hover table-striped table-responsive">
             <thead>
                 <tr>
                     <td>Product</td>
                     <td>Code</td>
                     <td>CreateDate</td>
                     <td>Price</td>
+                    <td>Cost</td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="product in vm.products">
-                    <td>{{ product.name}}</td>
+                    <td>
+                        <a ui-sref="productDetail({productId: product.id})">
+                            {{ product.name}}
+                        </a>                        
+                    </td>
                     <td>{{ product.productCode }}</td>
                     <td>{{ product.createDate | date }}</td>
                     <td>{{ product.price | currency }}</td>
+                    <td>{{ product.cost | currency }}</td>
+                    <td>
+                        <a
+                           ui-sref="productEdit.info({id: product.id})">
+                            Edit
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

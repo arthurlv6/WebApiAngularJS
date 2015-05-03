@@ -11,6 +11,7 @@ namespace ApiServer.DataContext.Models
     public class Product
     {
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         [DefaultValue(100)]
         public double Price { get; set; }
@@ -19,7 +20,7 @@ namespace ApiServer.DataContext.Models
         public string Profile { get; set; }
         public DateTime CreateDate { get; set; }
         [Required(ErrorMessage = "Product Code is required", AllowEmptyStrings = false)]
-        [MinLength(6, ErrorMessage = "Product Code min length is 6 characters")]
+        //[MinLength(6, ErrorMessage = "Product Code min length is 6 characters")]
         public string ProductCode { get; set; }
     }
 }

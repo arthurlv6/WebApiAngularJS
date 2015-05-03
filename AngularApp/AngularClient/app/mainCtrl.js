@@ -21,16 +21,16 @@
             confirmPassword: ''
         };
 
-        vm.registerUser = function () {
+        vm.registerUser = function() {
             vm.userData.confirmPassword = vm.userData.password;
 
             userAccount.registration.registerUser(vm.userData,
-                function (data) {
+                function(data) {
                     vm.confirmPassword = "";
                     vm.message = "... Registration successful";
                     vm.login();
                 },
-                function (response) {
+                function(response) {
                     vm.isLoggedIn = false;
                     vm.message = response.statusText + "\r\n";
                     if (response.data.exceptionMessage)
@@ -43,20 +43,20 @@
                         }
                     }
                 });
-        }
+        };
 
-        vm.login = function () {
+        vm.login = function() {
             vm.userData.grant_type = "password";
             vm.userData.userName = vm.userData.email;
 
             userAccount.login.loginUser(vm.userData,
-                function (data) {
-                    
+                function(data) {
+
                     vm.password = "";
                     currentUser.setProfile(vm.userData.userName, data.access_token);
                     vm.message = "";
                 },
-                function (response) {
+                function(response) {
                     vm.password = "";
                     vm.message = response.statusText + "\r\n";
                     if (response.data.exceptionMessage)
@@ -66,6 +66,6 @@
                         vm.message += response.data.error;
                     }
                 });
-        }
+        };
     }
 })();

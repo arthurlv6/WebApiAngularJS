@@ -26,7 +26,8 @@ namespace ApiServer.Controllers
             string json = JsonConvert.SerializeObject(data);
             HttpContent content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var response = await GetClient().PostAsync(link, content);
+            var response = await GetClient().GetAsync(link);
+            //var response = await GetClient().PostAsync(link, content);
             if (response.IsSuccessStatusCode)
             {
                 var ret = response.Content.ReadAsStringAsync();

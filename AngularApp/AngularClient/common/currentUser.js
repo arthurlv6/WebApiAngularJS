@@ -4,7 +4,7 @@
     angular
         .module("common.services")
         .factory("currentUser",
-                  currentUser)
+            currentUser);
 
     function currentUser() {
         var profile = {
@@ -19,13 +19,13 @@
             profile.isLoggedIn = true;
         };
 
-        var getProfile = function () {
+        var getProfile = function() {
             return profile;
-        }
+        };
 
         return {
             setProfile: setProfile,
             getProfile: getProfile
-        }
+        };
     }
 })();
